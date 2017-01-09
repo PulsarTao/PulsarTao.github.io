@@ -68,55 +68,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-SECONG" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/09/SECONG/" class="article-date">
-  <time datetime="2017-01-09T05:18:41.000Z" itemprop="datePublished">2017-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/09/SECONG/">SECONG</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function getInfo()</div><div class="line">&#123;</div><div class="line">var s = <span class="string">""</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域宽："</span> document.body.clientWidth<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域高："</span> document.body.clientHeight<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域宽："</span> document.body.offsetWidth <span class="string">" (包括边线和滚动条的宽)"</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域高："</span> document.body.offsetHeight <span class="string">" (包括边线的宽)"</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文全文宽："</span> document.body.scrollWidth<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文全文高："</span> document.body.scrollHeight<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页被卷去的高(ff)："</span> document.body.scrollTop<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页被卷去的高(ie)："</span> document.documentElement.scrollTop<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页被卷去的左："</span> document.body.scrollLeft<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文部分上："</span> window.screenTop<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文部分左："</span> window.screenLeft<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕分辨率的高："</span> window.screen.height<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕分辨率的宽："</span> window.screen.width<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕可用工作区高度："</span> window.screen.availHeight<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕可用工作区宽度："</span> window.screen.availWidth<span class="comment">;</span></div><div class="line"></div><div class="line"><span class="attribute">s</span> = <span class="string">" 你的屏幕设置是 "</span> window.screen.colorDepth <span class="string">" 位彩色"</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 你的屏幕设置 "</span> window.screen.deviceXDPI <span class="string">" 像素/英寸"</span><span class="comment">;</span></div><div class="line">//alert (s)<span class="comment">;</span></div><div class="line">&#125;</div><div class="line">getInfo()<span class="comment">;</span></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>在我本地测试当中：<br>在IE、FireFox、Opera下都可以使用<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientWidth</span></div><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientHeight</span></div></pre></td></tr></table></figure></p>
-<p>即可获得，很简单，很方便。<br>而在公司项目当中：</p>
-<p>Opera仍然使用<br>document.body.clientWidth<br>document.body.clientHeight  </p>
-<p>可是IE和FireFox则使用<br>document.documentElement.clientWidth<br>document.documentElement.clientHeight  </p>
-<p>原来是W3C的标准在作怪啊<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></div></pre></td></tr></table></figure></p>
-<p>如果在页面中添加这行标记的话 在IE中：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientWidth</span> ==&gt; BODY对象宽度  </div><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientHeight</span> ==&gt; BODY对象高度  </div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientWidth</span> ==&gt; 可见区域宽度  </div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientHeight</span> ==&gt; 可见区域高度</div></pre></td></tr></table></figure></p>
-<p>在FireFox中：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientWidth</span> ==&gt; BODY对象宽度</div><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientHeight</span> ==&gt; BODY对象高度</div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientWidth</span> ==&gt; 可见区域宽度</div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientHeight</span> ==&gt; 可见区域高度</div></pre></td></tr></table></figure></p>
-<p>在Opera中：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientWidth</span> ==&gt; 可见区域宽度</div><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientHeight</span> ==&gt; 可见区域高度</div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientWidth</span> ==&gt; 页面对象宽度（即BODY对象宽度加上Margin宽）</div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientHeight</span> ==&gt; 页面对象高度（即BODY对象高度加上Margin高）</div></pre></td></tr></table></figure></p>
-<p>而如果没有定义W3C的标准，则   </p>
-<p>IE为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientWidth</span> ==&gt; <span class="number">0</span></div><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientHeight</span> ==&gt; <span class="number">0</span></div></pre></td></tr></table></figure></p>
-<p>FireFox为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientWidth</span> ==&gt; 页面对象宽度（即BODY对象宽度加上Margin宽）document<span class="selector-class">.documentElement</span><span class="selector-class">.clientHeight</span> ==&gt; 页面对象高度（即BODY对象高度加上Margin高）</div></pre></td></tr></table></figure></p>
-<p>Opera为：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.documentElement</span><span class="selector-class">.clientWidth</span> ==&gt; 页面对象宽度（即BODY对象宽度加上Margin宽）document<span class="selector-class">.documentElement</span><span class="selector-class">.clientHeight</span> ==&gt; 页面对象高度（即BODY对象高度加上Margin高）</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="/PulsarTao.github.io/2017/01/09/SECONG/" data-id="cixpn1uwl000050fuxgv92n35" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-My-first-blog-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/08/My-first-blog-markdown/" class="article-date">
@@ -143,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="/PulsarTao.github.io/2017/01/08/My-first-blog-markdown/" data-id="cixpn1uwr000150fu0hasgz4t" class="article-share-link">Partager</a>
+      <a data-url="/PulsarTao.github.io/2017/01/08/My-first-blog-markdown/" data-id="cixpn4cj50000igfu4oa71jyq" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -181,10 +132,6 @@
     <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2017/01/09/SECONG/">SECONG</a>
-          </li>
         
           <li>
             <a href="/2017/01/08/My-first-blog-markdown/">My first blog markdown</a>
