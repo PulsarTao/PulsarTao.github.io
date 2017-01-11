@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/PulsarTao.github.io/"/>
-  <updated>2017-01-11T08:13:44.384Z</updated>
+  <updated>2017-01-11T17:27:51.451Z</updated>
   <id>/PulsarTao.github.io/</id>
   
   <author>
@@ -14,6 +14,123 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP Basic NO.1</title>
+    <link href="/PulsarTao.github.io/2017/01/12/PHP-Basic-NO-1/"/>
+    <id>/PulsarTao.github.io/2017/01/12/PHP-Basic-NO-1/</id>
+    <published>2017-01-11T16:20:51.000Z</published>
+    <updated>2017-01-11T17:27:51.451Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="变量-Variable-Value"><a href="#变量-Variable-Value" class="headerlink" title="变量 Variable Value"></a>变量 Variable Value</h2><p>什么是变量？<br>What’s variable?<br>变量是用于编程语言中进行计算的一系列抽象数据，列如<br>Variable is a abstract data to use in programing languages<br>eg:c-1-1<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=1;</span></div></pre></td></tr></table></figure></p>
+<p>上述列子中$a就是一个变量，其中$a是变量名，编程语言中每一个变量都有其对应的变量名。<br>$a is a variable in the above example one of the variable has it own variable name<br>变量是可变的(在纯函数式语言（如Haskell）中，变量可能是不可变的PHP不做赘述)<br>The value of variables is variable (In the pure functional languages like Haskell variable is possiblely immutable but I will not reapt it in PHP)<br>eg:c-1-2<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=1;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=2;</span></div></pre></td></tr></table></figure></p>
+<p>上述示例中$a的值由1变为2。<br>The value of $a from 1 to 2</p>
+<h3 id="变量的命名-The-naming-of-Variable"><a href="#变量的命名-The-naming-of-Variable" class="headerlink" title="变量的命名 The naming of Variable"></a>变量的命名 The naming of Variable</h3><p>PHP 中变量的命名遵守以下规则<br>The naming of variables in PHP follows the following rules  </p>
+<ul>
+<li>变量名区分大小写<br>PHP variable names are case-sensitive</li>
+<li>变量名必须以美元符号$开始<br>PHP variable names should start with $</li>
+<li>变量名开头可以以下划线开始<br>PHP variable names can start with a underline</li>
+<li>变量名不能以数字字符开头<br>PHP variable can’t start with a numeric character  </li>
+</ul>
+<p>eg:c-1-3<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span>_a=<span class="number">1</span>;</div><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=2;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$a323</span>=5;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$a</span>_b=6;</span></div></pre></td></tr></table></figure></p>
+<p>上述命名方法均正确<br>All the above methods are correct.</p>
+<p>END</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;变量-Variable-Value&quot;&gt;&lt;a href=&quot;#变量-Variable-Value&quot; class=&quot;headerlink&quot; title=&quot;变量 Variable Value&quot;&gt;&lt;/a&gt;变量 Variable Value&lt;/h2&gt;&lt;p&gt;什么是变量？&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="/PulsarTao.github.io/tags/PHP/"/>
+    
+      <category term="Basic" scheme="/PulsarTao.github.io/tags/Basic/"/>
+    
+      <category term="Variable" scheme="/PulsarTao.github.io/tags/Variable/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP Basic</title>
+    <link href="/PulsarTao.github.io/2017/01/12/PHP-Basic/"/>
+    <id>/PulsarTao.github.io/2017/01/12/PHP-Basic/</id>
+    <published>2017-01-11T16:20:44.000Z</published>
+    <updated>2017-01-11T17:00:19.894Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是PHP"><a href="#什么是PHP" class="headerlink" title="什么是PHP?"></a>什么是<a href="http://php.net/" target="_blank" rel="external">PHP</a>?</h2><ul>
+<li>　　PHP全名 Hypertext Preprocessor，中文名：“超文本预处理器”</li>
+<li>　　PHP是一种通用开源脚本语言。语法吸收了C语言、Java和Perl的特点，利于学习，使用广泛，主要适用于Web开发领域。PHP 独特的语法混合了C、Java、Perl以及PHP自创的语法。它可以比CGI或者Perl更快速地执行动态网页。用PHP做出的动态页面与其他的编程语言相比，PHP是将程序嵌入到HTML（标准通用标记语言下的一个应用）文档中去执行，执行效率比完全生成HTML标记的CGI要高许多；PHP还可以执行编译后代码，编译可以达到加密和优化代码运行，使代码运行更快。  </li>
+</ul>
+<h2 id="PHP的特性"><a href="#PHP的特性" class="headerlink" title="PHP的特性"></a>PHP的特性</h2><ol>
+<li>PHP 独特的语法混合了 C、Java、Perl 以及 PHP 自创新的语法。</li>
+<li>　　PHP可以比CGI或者Perl更快速的执行动态网页——动态页面方面，与其他的编程语言相比，<br>PHP是将程序嵌入到HTML文档中去执行，执行效率比完全生成htmL标记的CGI要高许多；<br>PHP具有非常强大的功能，所有的CGI的功能PHP都能实现。</li>
+<li>PHP支持几乎所有流行的数据库以及操作系统。</li>
+<li>最重要的是PHP可以用C、C++进行程序的扩展！</li>
+</ol>
+<p>PHP主要针对于WEB后端开发以及服务器运维，其语言具有较强的针对性，因此在行业中有较强的认可。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>　　1. 变量<br>　　　　|—<a href="">整形变量 Integer Variable</a><br>　　　　|—<a href="">浮点型变量 Floats Variable</a><br>　　　　|—<a href="">字符型变量 Character Variable</a><br>　　　　|—<a href="">字符串变量 String Variable</a><br>　　　　|—<a href="">常量 Constant</a><br>　　　　|—<a href="">函数,类的简单讲解 Simple explantion  of Class and Function</a><br>　　　　|—<a href="">变量作用域 Variables Scope</a>  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是PHP&quot;&gt;&lt;a href=&quot;#什么是PHP&quot; class=&quot;headerlink&quot; title=&quot;什么是PHP?&quot;&gt;&lt;/a&gt;什么是&lt;a href=&quot;http://php.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PHP&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="/PulsarTao.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A PHP OUTPUT problem</title>
+    <link href="/PulsarTao.github.io/2017/01/12/A-PHP-OUTPUT-problem/"/>
+    <id>/PulsarTao.github.io/2017/01/12/A-PHP-OUTPUT-problem/</id>
+    <published>2017-01-11T16:20:28.000Z</published>
+    <updated>2017-01-11T16:39:33.714Z</updated>
+    
+    <content type="html"><![CDATA[<p>用PHP的时候无意间发现一个问题<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">  $a=<span class="string">'b'</span>;</div><div class="line">  $b=<span class="number">2</span>;</div><div class="line">  $i=&amp;$b+$$a;</div><div class="line">  var_dump($i);<span class="regexp">//</span>OUTPUT int(<span class="number">2</span>);</div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"></div><div class="line">这段代码在执行`<span class="string">``</span>var_dump()<span class="string">``</span><span class="string">`输出以后会直接忽略掉$$a的值，而在引用b地址的时候直接让`</span><span class="string">``</span>$i=<span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>这个问题我去问了<br><a href="http://stackoverflow.com/questions/41478377/the-principle-of-php-inference-variable-output" target="_blank" rel="external">Stack OverFllow</a> 他们给出了比较详细的回答，这里我也做一下讲解<br>问题主要出在引用变量上面，在php中<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">$b = 7;</div><div class="line">$a = &amp;$b; // $a 指向$b</div><div class="line">$a = &apos;?&apos;; // $a 变量的值就会变得不明，因为前面它指向了$b的地址变量，变成了一个引用变量</div><div class="line">echo $b;  // 7</div><div class="line">```  </div><div class="line"></div><div class="line">而$a作为引用变量是不能给它赋值的，所以前面```$a=&apos;b&apos;```从根本上是不成立的,变成这样的根本原因在于```&amp;```引值运算符的[运算符优先权](http://php.net/manual/en/language.operators.precedence.php)大于等号。</div></pre></td></tr></table></figure></p>
+<p>$a = 7;<br>$d = ($c = &amp;$a + 1); // $c和$d会出现不同的状况<br>echo $c; // 7 &amp;运算符的优先权比+大<br>echo $d; // 8 这儿输出的是$c的值因为括号运算符内$c变量加上了1<br>```</p>
+<p>这个问题存在于PHP语言本身的运算符优先权分配的问题，仅作新颖问题思考，实际使用中不能这样使用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用PHP的时候无意间发现一个问题&lt;br&gt;&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="PHP" scheme="/PulsarTao.github.io/tags/PHP/"/>
+    
+      <category term="Problem" scheme="/PulsarTao.github.io/tags/Problem/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python Basic</title>
+    <link href="/PulsarTao.github.io/2017/01/12/Python-Basic/"/>
+    <id>/PulsarTao.github.io/2017/01/12/Python-Basic/</id>
+    <published>2017-01-11T16:19:17.000Z</published>
+    <updated>2017-01-11T17:28:48.273Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是Python"><a href="#什么是Python" class="headerlink" title="什么是Python?"></a>什么是Python?</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是Python&quot;&gt;&lt;a href=&quot;#什么是Python&quot; class=&quot;headerlink&quot; title=&quot;什么是Python?&quot;&gt;&lt;/a&gt;什么是Python?&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="/PulsarTao.github.io/tags/Python/"/>
+    
+      <category term="Basic" scheme="/PulsarTao.github.io/tags/Basic/"/>
+    
+  </entry>
   
   <entry>
     <title>Wechat PHP Dev NO.2</title>

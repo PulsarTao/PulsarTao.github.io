@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>My first blog markdown | V-Pulsar&#39;s Blog</title>
+  <title>A PHP OUTPUT problem | V-Pulsar&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UESTC第一菜">
+  <meta name="description" content="用PHP的时候无意间发现一个问题123456789&amp;lt;?php  $a=&apos;b&apos;;  $b=2;  $i=&amp;amp;$b+$$a;  var_dump($i);//OUTPUT int(2);?&amp;gt;```  这段代码在执行```var_dump()```输出以后会直接忽略掉$$a的值，而在引用b地址的时候直接让```$i=2
+这个问题我去问了Stack OverFllow 他们给出了比较详细">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My first blog markdown">
-<meta property="og:url" content="/PulsarTao.github.io/2017/01/08/My-first-blog-markdown/index.html">
+<meta property="og:title" content="A PHP OUTPUT problem">
+<meta property="og:url" content="/PulsarTao.github.io/2017/01/12/A-PHP-OUTPUT-problem/index.html">
 <meta property="og:site_name" content="V-Pulsar's Blog">
-<meta property="og:description" content="UESTC第一菜">
-<meta property="og:updated_time" content="2017-01-07T18:02:34.118Z">
+<meta property="og:description" content="用PHP的时候无意间发现一个问题123456789&amp;lt;?php  $a=&apos;b&apos;;  $b=2;  $i=&amp;amp;$b+$$a;  var_dump($i);//OUTPUT int(2);?&amp;gt;```  这段代码在执行```var_dump()```输出以后会直接忽略掉$$a的值，而在引用b地址的时候直接让```$i=2
+这个问题我去问了Stack OverFllow 他们给出了比较详细">
+<meta property="og:updated_time" content="2017-01-11T16:39:33.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My first blog markdown">
-<meta name="twitter:description" content="UESTC第一菜">
+<meta name="twitter:title" content="A PHP OUTPUT problem">
+<meta name="twitter:description" content="用PHP的时候无意间发现一个问题123456789&amp;lt;?php  $a=&apos;b&apos;;  $b=2;  $i=&amp;amp;$b+$$a;  var_dump($i);//OUTPUT int(2);?&amp;gt;```  这段代码在执行```var_dump()```输出以后会直接忽略掉$$a的值，而在引用b地址的时候直接让```$i=2
+这个问题我去问了Stack OverFllow 他们给出了比较详细">
   
     <link rel="alternate" href="/atom.xml" title="V-Pulsar&#39;s Blog" type="application/atom+xml">
   
@@ -67,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-My-first-blog-markdown" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-A-PHP-OUTPUT-problem" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/08/My-first-blog-markdown/" class="article-date">
-  <time datetime="2017-01-07T18:02:34.000Z" itemprop="datePublished">2017-01-08</time>
+    <a href="/2017/01/12/A-PHP-OUTPUT-problem/" class="article-date">
+  <time datetime="2017-01-11T16:20:28.000Z" itemprop="datePublished">2017-01-12</time>
 </a>
     
   </div>
@@ -81,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      My first blog markdown
+      A PHP OUTPUT problem
     </h1>
   
 
@@ -89,28 +92,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>用PHP的时候无意间发现一个问题<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">  $a=<span class="string">'b'</span>;</div><div class="line">  $b=<span class="number">2</span>;</div><div class="line">  $i=&amp;$b+$$a;</div><div class="line">  var_dump($i);<span class="regexp">//</span>OUTPUT int(<span class="number">2</span>);</div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"></div><div class="line">这段代码在执行`<span class="string">``</span>var_dump()<span class="string">``</span><span class="string">`输出以后会直接忽略掉$$a的值，而在引用b地址的时候直接让`</span><span class="string">``</span>$i=<span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>这个问题我去问了<br><a href="http://stackoverflow.com/questions/41478377/the-principle-of-php-inference-variable-output" target="_blank" rel="external">Stack OverFllow</a> 他们给出了比较详细的回答，这里我也做一下讲解<br>问题主要出在引用变量上面，在php中<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">$b = 7;</div><div class="line">$a = &amp;$b; // $a 指向$b</div><div class="line">$a = &apos;?&apos;; // $a 变量的值就会变得不明，因为前面它指向了$b的地址变量，变成了一个引用变量</div><div class="line">echo $b;  // 7</div><div class="line">```  </div><div class="line"></div><div class="line">而$a作为引用变量是不能给它赋值的，所以前面```$a=&apos;b&apos;```从根本上是不成立的,变成这样的根本原因在于```&amp;```引值运算符的[运算符优先权](http://php.net/manual/en/language.operators.precedence.php)大于等号。</div></pre></td></tr></table></figure></p>
+<p>$a = 7;<br>$d = ($c = &amp;$a + 1); // $c和$d会出现不同的状况<br>echo $c; // 7 &amp;运算符的优先权比+大<br>echo $d; // 8 这儿输出的是$c的值因为括号运算符内$c变量加上了1<br>```</p>
+<p>这个问题存在于PHP语言本身的运算符优先权分配的问题，仅作新颖问题思考，实际使用中不能这样使用。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="/PulsarTao.github.io/2017/01/08/My-first-blog-markdown/" data-id="cixt81jyt000314fu6rkmces5" class="article-share-link">Share</a>
+      <a data-url="/PulsarTao.github.io/2017/01/12/A-PHP-OUTPUT-problem/" data-id="cixt81jzt000l14fu6e9wntes" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Problem/">Problem</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2017/01/09/How-to-get-Window-size-info/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/12/PHP-Basic/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          How to get Window size info
+          PHP Basic
         
       </div>
     </a>
   
+  
+    <a href="/2017/01/12/Python-Basic/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Basic</div>
+    </a>
   
 </nav>
 
