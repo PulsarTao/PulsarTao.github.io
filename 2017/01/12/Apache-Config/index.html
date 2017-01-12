@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: PHP | V-Pulsar&#39;s Blog</title>
+  <title>Apache Config | V-Pulsar&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UESTC第一菜">
-<meta property="og:type" content="website">
-<meta property="og:title" content="V-Pulsar's Blog">
-<meta property="og:url" content="/PulsarTao.github.io/tags/PHP/index.html">
+  <meta name="description" content="卸载apache有时候使用Ubuntu 服务器的时候会出现卸载Apache服务以后libapache2-mod-php不能安装这种情况，报错报一些脚本错误，这是前面Apache未卸载干净的原因，下面给出一些完全卸载Apache的方法。1234567sudo apt-get --purge remove apache-commonapt-get --purge remove apache  ```">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache Config">
+<meta property="og:url" content="/PulsarTao.github.io/2017/01/12/Apache-Config/index.html">
 <meta property="og:site_name" content="V-Pulsar's Blog">
-<meta property="og:description" content="UESTC第一菜">
+<meta property="og:description" content="卸载apache有时候使用Ubuntu 服务器的时候会出现卸载Apache服务以后libapache2-mod-php不能安装这种情况，报错报一些脚本错误，这是前面Apache未卸载干净的原因，下面给出一些完全卸载Apache的方法。1234567sudo apt-get --purge remove apache-commonapt-get --purge remove apache  ```">
+<meta property="og:updated_time" content="2017-01-12T07:15:56.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="V-Pulsar's Blog">
-<meta name="twitter:description" content="UESTC第一菜">
+<meta name="twitter:title" content="Apache Config">
+<meta name="twitter:description" content="卸载apache有时候使用Ubuntu 服务器的时候会出现卸载Apache服务以后libapache2-mod-php不能安装这种情况，报错报一些脚本错误，这是前面Apache未卸载干净的原因，下面给出一些完全卸载Apache的方法。1234567sudo apt-get --purge remove apache-commonapt-get --purge remove apache  ```">
   
     <link rel="alternate" href="/atom.xml" title="V-Pulsar&#39;s Blog" type="application/atom+xml">
   
@@ -66,115 +67,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/12/PHP-Basic-NO-1/" class="archive-article-date">
-  <time datetime="2017-01-11T16:20:51.000Z" itemprop="datePublished">Jan 12</time>
+        <section id="main"><article id="post-Apache-Config" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/12/Apache-Config/" class="article-date">
+  <time datetime="2017-01-12T07:06:51.000Z" itemprop="datePublished">2017-01-12</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/12/PHP-Basic-NO-1/">PHP Basic NO.1</a>
+    <h1 class="article-title" itemprop="name">
+      Apache Config
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/12/PHP-Basic/" class="archive-article-date">
-  <time datetime="2017-01-11T16:20:44.000Z" itemprop="datePublished">Jan 12</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/12/PHP-Basic/">PHP Basic</a>
-    </h1>
-  
+        <h2 id="卸载apache"><a href="#卸载apache" class="headerlink" title="卸载apache"></a>卸载apache</h2><p>有时候使用Ubuntu 服务器的时候会出现卸载Apache服务以后libapache2-mod-php不能安装这种情况，报错报一些脚本错误，这是前面Apache未卸载干净的原因，下面给出一些完全卸载Apache的方法。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="keyword">get</span> <span class="comment">--purge remove apache-common</span></div><div class="line">apt-<span class="keyword">get</span> <span class="comment">--purge remove apache  </span></div><div class="line">```  </div><div class="line"></div><div class="line"><span class="number">1.</span> 找到没有删除掉的配置文件，一并删除  </div><div class="line"></div><div class="line">指令如下</div></pre></td></tr></table></figure></p>
+<p>$ sudo find /etc -name “<em>apache</em>“ |xargs  rm -rf<br>$ sudo rm -rf /var/www<br>$sudo rm -rf /etc/libapache2-mod-XXX<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">XXX处填你需要卸载的模块名称  </div><div class="line"></div><div class="line"><span class="number">2.</span> 删除关联，这样就可以再次用apt-<span class="keyword">get</span> install apache2 重装了</div></pre></td></tr></table></figure></p>
+<p>#dpkg -l |grep apache2|awk ‘{print $2}’|xargs dpkg -P<br>```</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/12/A-PHP-OUTPUT-problem/" class="archive-article-date">
-  <time datetime="2017-01-11T16:20:28.000Z" itemprop="datePublished">Jan 12</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/12/A-PHP-OUTPUT-problem/">A PHP OUTPUT problem</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/11/Wechat-PHP-Dev-NO-2/" class="archive-article-date">
-  <time datetime="2017-01-11T07:08:12.000Z" itemprop="datePublished">Jan 11</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="/PulsarTao.github.io/2017/01/12/Apache-Config/" data-id="cixu1k1t40001mofudgo7ro8v" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/Wechat-PHP-Dev-NO-2/">Wechat PHP Dev NO.2</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/01/11/Wechat-PHP-Dev-NO-1/" class="archive-article-date">
-  <time datetime="2017-01-11T06:56:06.000Z" itemprop="datePublished">Jan 11</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/Wechat-PHP-Dev-NO-1/">Wechat PHP Dev NO.1</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Server/">Server</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/12/PHP-Basic-NO-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">PHP Basic NO.1</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

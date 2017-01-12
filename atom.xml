@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/PulsarTao.github.io/"/>
-  <updated>2017-01-11T17:27:51.451Z</updated>
+  <updated>2017-01-12T07:15:56.315Z</updated>
   <id>/PulsarTao.github.io/</id>
   
   <author>
@@ -16,11 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Apache Config</title>
+    <link href="/PulsarTao.github.io/2017/01/12/Apache-Config/"/>
+    <id>/PulsarTao.github.io/2017/01/12/Apache-Config/</id>
+    <published>2017-01-12T07:06:51.000Z</published>
+    <updated>2017-01-12T07:15:56.315Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="卸载apache"><a href="#卸载apache" class="headerlink" title="卸载apache"></a>卸载apache</h2><p>有时候使用Ubuntu 服务器的时候会出现卸载Apache服务以后libapache2-mod-php不能安装这种情况，报错报一些脚本错误，这是前面Apache未卸载干净的原因，下面给出一些完全卸载Apache的方法。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="keyword">get</span> <span class="comment">--purge remove apache-common</span></div><div class="line">apt-<span class="keyword">get</span> <span class="comment">--purge remove apache  </span></div><div class="line">```  </div><div class="line"></div><div class="line"><span class="number">1.</span> 找到没有删除掉的配置文件，一并删除  </div><div class="line"></div><div class="line">指令如下</div></pre></td></tr></table></figure></p>
+<p>$ sudo find /etc -name “<em>apache</em>“ |xargs  rm -rf<br>$ sudo rm -rf /var/www<br>$sudo rm -rf /etc/libapache2-mod-XXX<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">XXX处填你需要卸载的模块名称  </div><div class="line"></div><div class="line"><span class="number">2.</span> 删除关联，这样就可以再次用apt-<span class="keyword">get</span> install apache2 重装了</div></pre></td></tr></table></figure></p>
+<p>#dpkg -l |grep apache2|awk ‘{print $2}’|xargs dpkg -P<br>```</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;卸载apache&quot;&gt;&lt;a href=&quot;#卸载apache&quot; class=&quot;headerlink&quot; title=&quot;卸载apache&quot;&gt;&lt;/a&gt;卸载apache&lt;/h2&gt;&lt;p&gt;有时候使用Ubuntu 服务器的时候会出现卸载Apache服务以后libapache2-mo
+    
+    </summary>
+    
+    
+      <category term="Apache" scheme="/PulsarTao.github.io/tags/Apache/"/>
+    
+      <category term="Server" scheme="/PulsarTao.github.io/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PHP Basic NO.1</title>
     <link href="/PulsarTao.github.io/2017/01/12/PHP-Basic-NO-1/"/>
     <id>/PulsarTao.github.io/2017/01/12/PHP-Basic-NO-1/</id>
     <published>2017-01-11T16:20:51.000Z</published>
-    <updated>2017-01-11T17:27:51.451Z</updated>
+    <updated>2017-01-12T07:04:28.500Z</updated>
     
     <content type="html"><![CDATA[<h2 id="变量-Variable-Value"><a href="#变量-Variable-Value" class="headerlink" title="变量 Variable Value"></a>变量 Variable Value</h2><p>什么是变量？<br>What’s variable?<br>变量是用于编程语言中进行计算的一系列抽象数据，列如<br>Variable is a abstract data to use in programing languages<br>eg:c-1-1<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=1;</span></div></pre></td></tr></table></figure></p>
 <p>上述列子中$a就是一个变量，其中$a是变量名，编程语言中每一个变量都有其对应的变量名。<br>$a is a variable in the above example one of the variable has it own variable name<br>变量是可变的(在纯函数式语言（如Haskell）中，变量可能是不可变的PHP不做赘述)<br>The value of variables is variable (In the pure functional languages like Haskell variable is possiblely immutable but I will not reapt it in PHP)<br>eg:c-1-2<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=1;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=2;</span></div></pre></td></tr></table></figure></p>
@@ -34,7 +59,9 @@
 </ul>
 <p>eg:c-1-3<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span>_a=<span class="number">1</span>;</div><div class="line"><span class="meta"><span class="meta-keyword">$a</span>=2;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$a323</span>=5;</span></div><div class="line"><span class="meta"><span class="meta-keyword">$a</span>_b=6;</span></div></pre></td></tr></table></figure></p>
 <p>上述命名方法均正确<br>All the above methods are correct.</p>
-<p>END</p>
+<h3 id="可变变量-Variable-variables"><a href="#可变变量-Variable-variables" class="headerlink" title="可变变量 Variable variables"></a>可变变量 Variable variables</h3><p>eg:c-1-4<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$a</span>=<span class="string">"c"</span>;</div><div class="line">$<span class="variable">$a</span>=<span class="number">2</span>;<span class="regexp">//</span>It means <span class="variable">$c</span>=<span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>多个美元符声明了对应字符变量下的值为变量的变量。这种形式称为可变变量。可变变量多用于交换<a href="">数组</a>键值的数据处理中。</p>
+<h2 id="变量的数据类型-Data-Type"><a href="#变量的数据类型-Data-Type" class="headerlink" title="变量的数据类型  Data Type"></a>变量的数据类型  Data Type</h2><p>END</p>
 ]]></content>
     
     <summary type="html">
@@ -45,10 +72,6 @@
     
     
       <category term="PHP" scheme="/PulsarTao.github.io/tags/PHP/"/>
-    
-      <category term="Basic" scheme="/PulsarTao.github.io/tags/Basic/"/>
-    
-      <category term="Variable" scheme="/PulsarTao.github.io/tags/Variable/"/>
     
   </entry>
   
@@ -89,7 +112,7 @@
     <link href="/PulsarTao.github.io/2017/01/12/A-PHP-OUTPUT-problem/"/>
     <id>/PulsarTao.github.io/2017/01/12/A-PHP-OUTPUT-problem/</id>
     <published>2017-01-11T16:20:28.000Z</published>
-    <updated>2017-01-11T16:39:33.714Z</updated>
+    <updated>2017-01-12T06:48:38.242Z</updated>
     
     <content type="html"><![CDATA[<p>用PHP的时候无意间发现一个问题<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">  $a=<span class="string">'b'</span>;</div><div class="line">  $b=<span class="number">2</span>;</div><div class="line">  $i=&amp;$b+$$a;</div><div class="line">  var_dump($i);<span class="regexp">//</span>OUTPUT int(<span class="number">2</span>);</div><div class="line"><span class="meta">?&gt;</span></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"></div><div class="line">这段代码在执行`<span class="string">``</span>var_dump()<span class="string">``</span><span class="string">`输出以后会直接忽略掉$$a的值，而在引用b地址的时候直接让`</span><span class="string">``</span>$i=<span class="number">2</span></div></pre></td></tr></table></figure></p>
 <p>这个问题我去问了<br><a href="http://stackoverflow.com/questions/41478377/the-principle-of-php-inference-variable-output" target="_blank" rel="external">Stack OverFllow</a> 他们给出了比较详细的回答，这里我也做一下讲解<br>问题主要出在引用变量上面，在php中<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">$b = 7;</div><div class="line">$a = &amp;$b; // $a 指向$b</div><div class="line">$a = &apos;?&apos;; // $a 变量的值就会变得不明，因为前面它指向了$b的地址变量，变成了一个引用变量</div><div class="line">echo $b;  // 7</div><div class="line">```  </div><div class="line"></div><div class="line">而$a作为引用变量是不能给它赋值的，所以前面```$a=&apos;b&apos;```从根本上是不成立的,变成这样的根本原因在于```&amp;```引值运算符的[运算符优先权](http://php.net/manual/en/language.operators.precedence.php)大于等号。</div></pre></td></tr></table></figure></p>
@@ -106,7 +129,7 @@
     
       <category term="PHP" scheme="/PulsarTao.github.io/tags/PHP/"/>
     
-      <category term="Problem" scheme="/PulsarTao.github.io/tags/Problem/"/>
+      <category term="ThinkProblem" scheme="/PulsarTao.github.io/tags/ThinkProblem/"/>
     
   </entry>
   
@@ -115,7 +138,7 @@
     <link href="/PulsarTao.github.io/2017/01/12/Python-Basic/"/>
     <id>/PulsarTao.github.io/2017/01/12/Python-Basic/</id>
     <published>2017-01-11T16:19:17.000Z</published>
-    <updated>2017-01-11T17:28:48.273Z</updated>
+    <updated>2017-01-12T06:48:03.571Z</updated>
     
     <content type="html"><![CDATA[<h3 id="什么是Python"><a href="#什么是Python" class="headerlink" title="什么是Python?"></a>什么是Python?</h3>]]></content>
     
@@ -127,8 +150,6 @@
     
     
       <category term="Python" scheme="/PulsarTao.github.io/tags/Python/"/>
-    
-      <category term="Basic" scheme="/PulsarTao.github.io/tags/Basic/"/>
     
   </entry>
   
@@ -166,12 +187,12 @@
     <link href="/PulsarTao.github.io/2017/01/11/Wechat-PHP-Dev-NO-1/"/>
     <id>/PulsarTao.github.io/2017/01/11/Wechat-PHP-Dev-NO-1/</id>
     <published>2017-01-11T06:56:06.000Z</published>
-    <updated>2017-01-11T08:14:29.062Z</updated>
+    <updated>2017-01-12T06:47:46.167Z</updated>
     
     <content type="html"><![CDATA[<p>首先，梳理一下微信公众号的整个工作流程  </p>
 <ul>
 <li>事件<br>事件就是用户对公众号发生一系列操作的时候触发的动作<br>微信的事件有下  <ol>
-<li><a href="">]关注/取消关注事件</a></li>
+<li><a href="">关注/取消关注事件</a></li>
 <li><a href="">扫描带参数二维码事件</a></li>
 <li><a href="">上报地理位置事件</a></li>
 <li><a href="">自定义菜单事件</a></li>
@@ -213,8 +234,8 @@
       &lt;p&gt;首先，梳理一下微信公众号的整个工作流程  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;事件&lt;br&gt;事件就是用户对公众号发生一系列操作的时候触发的动作&lt;br&gt;微信的事件有下  &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;]关注/取消关注事件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;扫描带
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;关注/取消关注事件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;扫描带参
     
     </summary>
     
@@ -223,8 +244,6 @@
     
       <category term="Wechat" scheme="/PulsarTao.github.io/tags/Wechat/"/>
     
-      <category term="Overview" scheme="/PulsarTao.github.io/tags/Overview/"/>
-    
   </entry>
   
   <entry>
@@ -232,7 +251,7 @@
     <link href="/PulsarTao.github.io/2017/01/09/Time-method-C/"/>
     <id>/PulsarTao.github.io/2017/01/09/Time-method-C/</id>
     <published>2017-01-09T05:24:51.000Z</published>
-    <updated>2017-01-11T08:17:54.333Z</updated>
+    <updated>2017-01-12T06:48:14.864Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">DateTime dt = DateTime.Now;</div><div class="line">Label1.<span class="built_in">Text</span> = dt.<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 13:21:25</span></div><div class="line">Label2.<span class="built_in">Text</span> = dt.ToFileTime().<span class="built_in">ToString</span>();<span class="comment">//127756416859912816</span></div><div class="line">Label3.<span class="built_in">Text</span> = dt.ToFileTimeUtc().<span class="built_in">ToString</span>();<span class="comment">//127756704859912816</span></div><div class="line">Label4.<span class="built_in">Text</span> = dt.ToLocalTime().<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 21:21:25</span></div><div class="line">Label5.<span class="built_in">Text</span> = dt.ToLongDateString().<span class="built_in">ToString</span>();<span class="comment">//2005年11月5日</span></div><div class="line">Label6.<span class="built_in">Text</span> = dt.ToLongTimeString().<span class="built_in">ToString</span>();<span class="comment">//13:21:25</span></div><div class="line">Label7.<span class="built_in">Text</span> = dt.ToOADate().<span class="built_in">ToString</span>();<span class="comment">//38661.5565508218</span></div><div class="line">Label8.<span class="built_in">Text</span> = dt.ToShortDateString().<span class="built_in">ToString</span>();<span class="comment">//2005-11-5</span></div><div class="line">Label9.<span class="built_in">Text</span> = dt.ToShortTimeString().<span class="built_in">ToString</span>();<span class="comment">//13:21</span></div><div class="line">Label10.<span class="built_in">Text</span> = dt.ToUniversalTime().<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 5:21:25</span></div><div class="line"><span class="comment">//?2005-11-5 13:30:28.4412864</span></div><div class="line">Label1.<span class="built_in">Text</span> = dt.Year.<span class="built_in">ToString</span>();<span class="comment">//2005</span></div><div class="line">Label2.<span class="built_in">Text</span> = dt.<span class="built_in">Date</span>.<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 0:00:00</span></div><div class="line">Label3.<span class="built_in">Text</span> = dt.DayOfWeek.<span class="built_in">ToString</span>();<span class="comment">//Saturday</span></div><div class="line">Label4.<span class="built_in">Text</span> = dt.DayOfYear.<span class="built_in">ToString</span>();<span class="comment">//309</span></div><div class="line">Label5.<span class="built_in">Text</span> = dt.Hour.<span class="built_in">ToString</span>();<span class="comment">//13</span></div><div class="line">Label6.<span class="built_in">Text</span> = dt.Millisecond.<span class="built_in">ToString</span>();<span class="comment">//441</span></div><div class="line">Label7.<span class="built_in">Text</span> = dt.Minute.<span class="built_in">ToString</span>();<span class="comment">//30</span></div><div class="line">Label8.<span class="built_in">Text</span> = dt.Month.<span class="built_in">ToString</span>();<span class="comment">//11</span></div><div class="line">Label9.<span class="built_in">Text</span> = dt.Second.<span class="built_in">ToString</span>();<span class="comment">//28</span></div><div class="line">Label10.<span class="built_in">Text</span> = dt.Ticks.<span class="built_in">ToString</span>();<span class="comment">//632667942284412864</span></div><div class="line">Label11.<span class="built_in">Text</span> = dt.TimeOfDay.<span class="built_in">ToString</span>();<span class="comment">//13:30:28.4412864</span></div><div class="line">Label1.<span class="built_in">Text</span> = dt.<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 13:47:04</span></div><div class="line">Label2.<span class="built_in">Text</span> = dt.AddYears(<span class="number">1</span>).<span class="built_in">ToString</span>();<span class="comment">//2006-11-5 13:47:04</span></div><div class="line">Label3.<span class="built_in">Text</span> = dt.AddDays(<span class="number">1.1</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-11-6 16:11:04</span></div><div class="line">Label4.<span class="built_in">Text</span> = dt.AddHours(<span class="number">1.1</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 14:53:04</span></div><div class="line">Label5.<span class="built_in">Text</span> = dt.AddMilliseconds(<span class="number">1.1</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 13:47:04</span></div><div class="line">Label6.<span class="built_in">Text</span> = dt.AddMonths(<span class="number">1</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-12-5 13:47:04</span></div><div class="line">Label7.<span class="built_in">Text</span> = dt.AddSeconds(<span class="number">1.1</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 13:47:05</span></div><div class="line">Label8.<span class="built_in">Text</span> = dt.AddMinutes(<span class="number">1.1</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 13:48:10</span></div><div class="line">Label9.<span class="built_in">Text</span> = dt.AddTicks(<span class="number">1000</span>).<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 13:47:04</span></div><div class="line">Label10.<span class="built_in">Text</span> = dt.CompareTo(dt).<span class="built_in">ToString</span>();<span class="comment">//0</span></div><div class="line"><span class="comment">//Label11.Text = dt.Add(?).ToString();//问号为一个时间段</span></div><div class="line">Label1.<span class="built_in">Text</span> = dt.Equals(<span class="string">"2005-11-6 16:11:04"</span>).<span class="built_in">ToString</span>();<span class="comment">//False</span></div><div class="line">Label2.<span class="built_in">Text</span> = dt.Equals(dt).<span class="built_in">ToString</span>();<span class="comment">//True</span></div><div class="line">Label3.<span class="built_in">Text</span> = dt.GetHashCode().<span class="built_in">ToString</span>();<span class="comment">//1474088234</span></div><div class="line">Label4.<span class="built_in">Text</span> = dt.GetType().<span class="built_in">ToString</span>();<span class="comment">//System.DateTime</span></div><div class="line">Label5.<span class="built_in">Text</span> = dt.GetTypeCode().<span class="built_in">ToString</span>();<span class="comment">//DateTime</span></div><div class="line">Label1.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'s'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//2005-11-05T14:06:25</span></div><div class="line">Label2.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'t'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//14:06</span></div><div class="line">Label3.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'y'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//2005年11月</span></div><div class="line">Label4.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'D'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//2005年11月5日</span></div><div class="line">Label5.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'D'</span>)[<span class="number">1</span>].<span class="built_in">ToString</span>();<span class="comment">//2005 11 05</span></div><div class="line">Label6.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'D'</span>)[<span class="number">2</span>].<span class="built_in">ToString</span>();<span class="comment">//星期六 2005 11 05</span></div><div class="line">Label7.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'D'</span>)[<span class="number">3</span>].<span class="built_in">ToString</span>();<span class="comment">//星期六 2005年11月5日</span></div><div class="line">Label8.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'M'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//11月5日</span></div><div class="line">Label9.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'f'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//2005年11月5日 14:06</span></div><div class="line">Label10.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'g'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//2005-11-5 14:06</span></div><div class="line">Label11.<span class="built_in">Text</span> = dt.GetDateTimeFormats(<span class="string">'r'</span>)[<span class="number">0</span>].<span class="built_in">ToString</span>();<span class="comment">//Sat, 05 Nov 2005 14:06:25 GMT</span></div><div class="line">Label1.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:d&#125;"</span>,dt);<span class="comment">//2005-11-5</span></div><div class="line">Label2.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:D&#125;"</span>,dt);<span class="comment">//2005年11月5日</span></div><div class="line">Label3.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:f&#125;"</span>,dt);<span class="comment">//2005年11月5日 14:23</span></div><div class="line">Label4.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:F&#125;"</span>,dt);<span class="comment">//2005年11月5日 14:23:23</span></div><div class="line">Label5.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:g&#125;"</span>,dt);<span class="comment">//2005-11-5 14:23</span></div><div class="line">Label6.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:G&#125;"</span>,dt);<span class="comment">//2005-11-5 14:23:23</span></div><div class="line">Label7.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:M&#125;"</span>,dt);<span class="comment">//11月5日</span></div><div class="line">Label8.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:R&#125;"</span>,dt);<span class="comment">//Sat, 05 Nov 2005 14:23:23 GMT</span></div><div class="line">Label9.<span class="built_in">Text</span> =? string.<span class="built_in">Format</span>(<span class="string">"&#123;0:s&#125;"</span>,dt);<span class="comment">//2005-11-05T14:23:23</span></div><div class="line">Label10.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0:t&#125;"</span>,dt);<span class="comment">//14:23</span></div><div class="line">Label11.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0:T&#125;"</span>,dt);<span class="comment">//14:23:23</span></div><div class="line">Label12.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0:u&#125;"</span>,dt);<span class="comment">//2005-11-05 14:23:23Z</span></div><div class="line">Label13.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0:U&#125;"</span>,dt);<span class="comment">//2005年11月5日 6:23:23</span></div><div class="line">Label14.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0:Y&#125;"</span>,dt);<span class="comment">//2005年11月</span></div><div class="line">Label15.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0&#125;"</span>,dt);<span class="comment">//2005-11-5 14:23:23?</span></div><div class="line">Label16.<span class="built_in">Text</span> = string.<span class="built_in">Format</span>(<span class="string">"&#123;0:yyyyMMddHHmmssffff&#125;"</span>,dt);</div><div class="line"><span class="comment">//yyyymm等可以设置,比如Label16.Text = string.Format("&#123;0:yyyyMMdd&#125;",dt);</span></div></pre></td></tr></table></figure>
 ]]></content>
@@ -246,7 +265,7 @@
     
       <category term="C#" scheme="/PulsarTao.github.io/tags/C/"/>
     
-      <category term="TimeControl" scheme="/PulsarTao.github.io/tags/TimeControl/"/>
+      <category term="Note" scheme="/PulsarTao.github.io/tags/Note/"/>
     
   </entry>
   
@@ -255,7 +274,7 @@
     <link href="/PulsarTao.github.io/2017/01/09/How-to-get-Window-size-info/"/>
     <id>/PulsarTao.github.io/2017/01/09/How-to-get-Window-size-info/</id>
     <published>2017-01-09T05:21:59.000Z</published>
-    <updated>2017-01-11T08:14:47.752Z</updated>
+    <updated>2017-01-12T06:48:22.937Z</updated>
     
     <content type="html"><![CDATA[<p>JavaScript代码<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function getInfo()</div><div class="line">&#123;</div><div class="line">var s = <span class="string">""</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域宽："</span> document.body.clientWidth<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域高："</span> document.body.clientHeight<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域宽："</span> document.body.offsetWidth <span class="string">" (包括边线和滚动条的宽)"</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页可见区域高："</span> document.body.offsetHeight <span class="string">" (包括边线的宽)"</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文全文宽："</span> document.body.scrollWidth<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文全文高："</span> document.body.scrollHeight<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页被卷去的高(ff)："</span> document.body.scrollTop<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页被卷去的高(ie)："</span> document.documentElement.scrollTop<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页被卷去的左："</span> document.body.scrollLeft<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文部分上："</span> window.screenTop<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 网页正文部分左："</span> window.screenLeft<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕分辨率的高："</span> window.screen.height<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕分辨率的宽："</span> window.screen.width<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕可用工作区高度："</span> window.screen.availHeight<span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 屏幕可用工作区宽度："</span> window.screen.availWidth<span class="comment">;</span></div><div class="line"></div><div class="line"><span class="attribute">s</span> = <span class="string">" 你的屏幕设置是 "</span> window.screen.colorDepth <span class="string">" 位彩色"</span><span class="comment">;</span></div><div class="line"><span class="attribute">s</span> = <span class="string">" 你的屏幕设置 "</span> window.screen.deviceXDPI <span class="string">" 像素/英寸"</span><span class="comment">;</span></div><div class="line">//alert (s)<span class="comment">;</span></div><div class="line">&#125;</div><div class="line">getInfo()<span class="comment">;</span></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>在我本地测试当中：<br>在IE、FireFox、Opera下都可以使用<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientWidth</span></div><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.clientHeight</span></div></pre></td></tr></table></figure></p>
